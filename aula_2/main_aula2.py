@@ -135,10 +135,111 @@ print(resposta)
 
 # 21: Conversor de Temperatura
 
+try:
+    celsius = int(input('Digite uma temperatura: '))  # Adicionada a pontuação final
+
+    fahrenheit = (9 / 5) * celsius + 32
+    print(fahrenheit)
+except ValueError:
+    print("Erro: Entrada inválida. Digite um número inteiro.")
+
+except Exception as e:
+    print(f"Erro: {e}. Digite um número inteiro.")
+    
 # 22: Verificador de Palíndromo
+entrada = input("Digite uma palavra ou frase: ")
+
+entrada_preparada = entrada.strip().lower()
+
+entrada_invertida = entrada_preparada[::-1]
+if entrada_preparada == entrada_invertida:
+    resultado = "A entrada é um palíndromo."
+else:
+    resultado = "A entrada não é um palíndromo."
+    
+print(resultado)
 
 # 23: Calculadora Simples
 
+while True:
+    # Exibir o menu
+    print("Escolha uma opção:")
+    print("1. Calcular a soma de dois números")
+    print("2. Calcular a subtração de dois números")
+    print("3. Calcular a multiplicação entre dois números")
+    print("4. Calcular a divisão de dois números")
+    print("5. Sair")
+
+    escolha = input('Digite a opção desejada: ')
+    
+    if escolha == '1':
+        num1 = float(input('Digite o primeiro número: '))
+        num2 = float(input('Digite o segundo número: '))
+        resposta = num1 + num2
+        print(f"A soma é: {resposta}")
+    
+    elif escolha == '2':
+        num1 = float(input('Digite o primeiro número: '))
+        num2 = float(input('Digite o segundo número: '))
+        resposta = num1 - num2
+        print(f"A subtração é: {resposta}")
+    
+    elif escolha == '3':
+        num1 = float(input('Digite o primeiro número: '))
+        num2 = float(input('Digite o segundo número: '))
+        resposta = num1 * num2
+        print(f"A multiplicação é: {resposta}")
+    
+    elif escolha == '4':
+        try:
+            num1 = float(input('Digite o primeiro número: '))
+            num2 = float(input('Digite o segundo número: '))
+            resposta = num1 / num2
+            print(f"A divisão é: {resposta}")
+        except ZeroDivisionError:
+            print("Erro: Não é possível dividir por zero.")
+    
+    elif escolha == '5':
+        print("Saindo...")
+        break
+    
+    else:
+        print("Opção inválida. Tente novamente.")
+
+        
 # 24: Classificador de Números
+try:    
+    valor = int(input('Digite um número: '))
+
+    if valor < 0:
+        print('Esse número é negativo.') 
+
+    elif valor == 0:
+        print('Esse número é zero.')
+
+    elif valor > 0 and valor < 10:
+        print('Esse número é um positivo pequeno.')
+
+    elif valor >= 10 and valor < 100:
+        print('Esse número é um positivo médio.')
+    else:
+        print("Esse numero é um positivo grande.") 
+except ValueError:
+    print("Entrada inválida. Por favor, digite um número inteiro.")
 
 # 25: Conversão de Tipo com Validação
+
+while True:
+    try:
+      
+        valor = input('Digite um número: ')
+        
+        numero_float = float(valor)
+        
+        numero_inteiro = int(numero_float)
+        
+        print(f'Você digitou o número inteiro: {numero_inteiro}')
+        break  
+
+    except ValueError:
+        print('Erro: Entrada inválida. Por favor, digite um número válido.')
